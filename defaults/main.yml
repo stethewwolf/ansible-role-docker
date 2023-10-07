@@ -1,0 +1,4 @@
+#default values for docker
+
+portainer_enable: false
+portainer_disable_firewall: false

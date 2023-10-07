@@ -18,7 +18,7 @@
   when: portainer_enable 
 
 - name: "Allow new incoming SYN packets on TCP port 9000 (Portainer)"
-  ansible.builtin.iptables:
+  iptables:
     chain: INPUT
     protocol: tcp
     destination_port: "9000"
@@ -27,6 +27,6 @@
     jump: ACCEPT
     comment: Accept new HTTP connections.  
   notify: run_iptables_save
-  when: portainer_enable  
+  when: portainer_disable_firewall
 
 

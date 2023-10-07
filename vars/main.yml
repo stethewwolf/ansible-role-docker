@@ -1,5 +1,4 @@
 ## Here variables for docker
-#portainer_enable: true
 
 docker_packages: 
   - docker.io
