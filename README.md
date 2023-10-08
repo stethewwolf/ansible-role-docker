@@ -1,6 +1,8 @@
 # ansible-role-docker
 Simple ansible role for configure docker on a remote machine
 
+This role require [ansible-common-role](https://github.com/stethewwolf/ansible-common-role).
+
 ## Packages installed
 This role install the following packages on the target
 ```
