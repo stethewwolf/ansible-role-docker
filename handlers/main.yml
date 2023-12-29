@@ -1,0 +1,16 @@
+---
+- name: docker_run_iptables_save
+  ping: {}
+  notify: docker_run_iptables4_save 
+  notify: docker_run_iptables6_save 
+    
+- name: docker_run_iptables4_save
+  shell : "/usr/sbin/iptables-save > /etc/iptables/rules.v4"
+  become: yes
+  become_user: root 
+
+- name: docker_run_iptables6_save
+  shell : "/usr/sbin/ip6tables-save > /etc/iptables/rules.v6"
+  become: yes
+  become_user: root 
+
