@@ -29,4 +29,19 @@
   notify: docker_run_iptables_save
   when: portainer_enable  
 
+- name: "Configure docker daemon"
+  template: >
+    src=daemon.json
+    dest=/etc/docker/daemon.json
+  notify: restart_docker
+
+- name: "Run Hello Wolrd Docker Container"
+  docker_container: 
+    name: hello_world
+    image: 'hello-world'
+
+- name: "Add active Docker Containers"
+  docker_container: 
+    "{{ item }}"
+  loop: "{{ active_containers }}"
 

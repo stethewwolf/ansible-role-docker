@@ -1,0 +1,6 @@
+portainer_enable: false
+insecure_registries: ""
+active_containers:
+  - name: 'hello_world'  
+    image: 'hello-world'
+

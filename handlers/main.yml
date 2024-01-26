@@ -14,3 +14,7 @@
   become: yes
   become_user: root 
 
+- name: restart_docker
+  service: >
+    name=docker
+    state=restarted
